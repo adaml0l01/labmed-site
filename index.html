@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ЛабМед — Лаборатория</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: Arial, sans-serif; background: #0a0015; color: white; }
+    nav { display: flex; justify-content: space-between; align-items: center; padding: 20px 60px; background: rgba(255,255,255,0.05); backdrop-filter: blur(20px); position: fixed; width: 100%; top: 0; z-index: 100; }
+    .logo { font-size: 24px; font-weight: bold; color: #6C63FF; }
+    .nav-links a { color: white; text-decoration: none; margin-left: 30px; font-size: 15px; opacity: 0.8; }
+    .nav-links a:hover { opacity: 1; color: #6C63FF; }
+    .btn { background: #6C63FF; color: white; border: none; padding: 16px 40px; font-size: 16px; border-radius: 50px; cursor: pointer; text-decoration: none; display: inline-block; transition: all 0.3s; }
+    .btn:hover { background: #5a52e0; transform: translateY(-2px); box-shadow: 0 10px 30px rgba(108,99,255,0.4); }
+    .hero { min-height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; padding: 100px 20px 60px; background: radial-gradient(ellipse at top, #1a0040 0%, #0a0015 70%); }
+    .hero h1 { font-size: 56px; line-height: 1.2; margin-bottom: 20px; }
+    .hero h1 span { color: #6C63FF; }
+    .hero p { font-size: 20px; color: #aaa; max-width: 600px; margin: 0 auto 40px; line-height: 1.6; }
+    .services { padding: 80px 60px; text-align: center; }
+    .services h2 { font-size: 36px; margin-bottom: 12px; }
+    .services .subtitle { color: #aaa; margin-bottom: 50px; }
+    .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 24px; max-width: 1100px; margin: 0 auto; }
+    .card { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 20px; padding: 32px 24px; transition: all 0.3s; }
+    .card:hover { transform: translateY(-6px); border-color: #6C63FF; box-shadow: 0 20px 40px rgba(108,99,255,0.2); }
+    .card-icon { font-size: 48px; margin-bottom: 16px; }
+    .card h3 { font-size: 20px; margin-bottom: 10px; }
+    .card p { color: #aaa; font-size: 14px; line-height: 1.6; }
+    .contact { padding: 80px 60px; text-align: center; background: rgba(108,99,255,0.05); }
+    .contact h2 { font-size: 36px; margin-bottom: 12px; }
+    .contact > p { color: #aaa; margin-bottom: 10px; }
+    .form-group { max-width: 500px; margin: 40px auto 0; }
+    .form-group input, .form-group select { width: 100%; padding: 14px 20px; margin-bottom: 16px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; color: white; font-size: 15px; outline: none; }
+    .form-group select { background: #1a0040; }
+    .form-group input::placeholder { color: rgba(255,255,255,0.3); }
+    .form-group input:focus, .form-group select:focus { border-color: #6C63FF; }
+    .success-msg { display: none; margin-top: 30px; background: rgba(108,99,255,0.2); border: 1px solid #6C63FF; border-radius: 16px; padding: 24px; font-size: 18px; }
+    .contact-info { display: flex; justify-content: center; gap: 24px; flex-wrap: wrap; margin-top: 50px; }
+    .contact-item { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 24px 32px; }
+    .contact-item .icon { font-size: 32px; margin-bottom: 8px; }
+    .contact-item p { color: white; font-size: 16px; }
+    footer { text-align: center; padding: 30px; color: #555; font-size: 14px; }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="logo">🔬 ЛабМед</div>
+    <div class="nav-links">
+      <a href="#services">Услуги</a>
+      <a href="#contact">Контакты</a>
+      <a href="#contact" class="btn" style="padding:10px 24px; font-size:14px;">Записаться</a>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div>
+      <h1>Точные анализы —<br><span>быстрые результаты</span></h1>
+      <p>Современная лаборатория с новейшим оборудованием. Результаты анализов за 24 часа.</p>
+      <a href="#contact" class="btn">Записаться на анализ</a>
+    </div>
+  </section>
+
+  <section class="services" id="services">
+    <h2>Наши услуги</h2>
+    <p class="subtitle">Полный спектр лабораторных исследований</p>
+    <div class="cards">
+      <div class="card">
+        <div class="card-icon">🩸</div>
+        <h3>Анализ крови</h3>
+        <p>Общий, биохимический и развёрнутый анализ крови с результатами в течение дня</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🦠</div>
+        <h3>ПЦР диагностика</h3>
+        <p>Точная диагностика инфекционных заболеваний методом ПЦР</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">💊</div>
+        <h3>Гормоны</h3>
+        <p>Исследование гормонального фона и эндокринной системы</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🧬</div>
+        <h3>Генетика</h3>
+        <p>Генетические тесты и исследование ДНК</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <h2>Записаться на анализ</h2>
+    <p>Заполните форму и мы перезвоним вам в течение 15 минут</p>
+
+    <div class="form-group">
+      <input type="text" id="name" placeholder="Ваше имя">
+      <input type="tel" id="phone" placeholder="Номер телефона">
+      <select id="service">
+        <option value="">Выберите анализ</option>
+        <option value="Анализ крови">Анализ крови</option>
+        <option value="ПЦР диагностика">ПЦР диагностика</option>
+        <option value="Гормоны">Гормоны</option>
+        <option value="Генетика">Генетика</option>
+      </select>
+      <button class="btn" style="width:100%;" onclick="sendForm()">Записаться</button>
+    </div>
+
+    <div class="success-msg" id="successMsg">
+      ✅ Спасибо! Мы перезвоним вам в течение 15 минут.
+    </div>
+
+    <div class="contact-info">
+      <div class="contact-item">
+        <div class="icon">📞</div>
+        <p>+7 (999) 123-45-67</p>
+      </div>
+      <div class="contact-item">
+        <div class="icon">📍</div>
+        <p>ул. Медицинская, 15</p>
+      </div>
+      <div class="contact-item">
+        <div class="icon">🕐</div>
+        <p>Пн-Пт: 8:00 — 20:00</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 ЛабМед. Все права защищены.</p>
+  </footer>
+
+  <script>
+    async function sendForm() {
+      const name = document.getElementById('name').value;
+      const phone = document.getElementById('phone').value;
+      const service = document.getElementById('service').value;
+
+      if (!name || !phone || !service) {
+        alert('Пожалуйста заполните все поля!');
+        return;
+      }
+
+      const token = '8418207392:AAFNWlbgiT6nWwRU6kgAqimljfrXFjU0dZg';
+      const chatId = '715451303';
+      const text = `🔬 Новая заявка!\n\n👤 Имя: ${name}\n📞 Телефон: ${phone}\n🧪 Анализ: ${service}`;
+
+      try {
+        await fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ chat_id: chatId, text: text })
+        });
+
+        document.querySelector('.form-group').style.display = 'none';
+        document.getElementById('successMsg').style.display = 'block';
+      } catch (e) {
+        alert('Ошибка отправки. Попробуйте снова.');
+      }
+    }
+  </script>
+
+</body>
+</html>
